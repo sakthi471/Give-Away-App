@@ -4,8 +4,8 @@ const Newpost = () => {
   return (
     <div className="w-full text-white flex flex-col items-center py-14">
       <h2 className=" text-2xl font-semibold">New post</h2>
-      <form className="flex flex-col gap-8 items-center py-6 ">
-        <div className="flex flex-col gap-1">
+      <form className="flex flex-col gap-8 items-center w-full px-5 py-6 ">
+        <div className="flex flex-col gap-1 w-full">
           <label htmlFor="email">Post title</label>
           <input
             className=" outline-1 rounded-sm outline-none py-2 text-black px-2 focus:outline-blue-600"
@@ -22,7 +22,7 @@ const Newpost = () => {
             placeholder="Type something about the item......."
           ></textarea>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 w-full">
           <label htmlFor="">Location</label>
           <input
             className="text-black outline-1 rounded-sm outline-none py-2 px-2 focus:outline-blue-600"

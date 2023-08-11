@@ -1,31 +1,28 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./Home";
-import Nav from "./Nav";
-import Login from "./Login";
-import Signup from "./Signup";
-import Newpost from "./Newpost";
-import Browse from "./Browse";
-import WorkFlow from "./WorkFlow";
+import Home from "./pages/Home";
+import Nav from "./components/Nav";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Newpost from "./pages/Newpost";
+import Browse from "./pages/Browse";
+import WorkFlow from "./pages/WorkFlow";
 
 
 function App() {
   return (
     <div className="w-full bg-gradient-to-b from-[#020202] to-[#0A274D] min-h-screen">
       <Nav />
-    
         <Routes>
-          <Route path="/" element={<WorkFlow/>} />
+          <Route path="/" element={<Home/>}/>
+          <Route path="/browse" element={<Browse/>}/>
+          <Route path="/workflow" element={<WorkFlow/>}/>
           <Route path="login" element={<Login/>} />
           <Route path="signup" element={<Signup/>} />
           <Route path="newpost" element={<Newpost/>} />
           <Route path="*" />
-        </Routes>
-
-
-   
+        </Routes>   
     </div>
   );
 }
