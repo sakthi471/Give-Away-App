@@ -4,8 +4,8 @@ const Signup = () => {
   return (
     <div className="w-full text-white flex flex-col items-center py-14">
       <h2 className=" text-2xl font-semibold">Sign Up</h2>
-      <form className="flex flex-col gap-8 items-center py-6">
-        <div className="flex flex-col gap-1">
+      <form className="flex flex-col gap-8 items-center py-6 w-full px-3">
+        <div className="flex flex-col gap-1 w-full">
           <label htmlFor="email">Email</label>
           <input
             className=" outline-1 rounded-sm outline-none py-2 px-2 focus:outline-blue-600"
@@ -13,7 +13,7 @@ const Signup = () => {
             placeholder="sakthi@gmail.com"
           />
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-1 w-full">
           <label htmlFor="">Password</label>
           <input
             className=" outline-1 rounded-sm outline-none py-2 px-2 focus:outline-blue-600"

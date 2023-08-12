@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import Newpost from "./pages/Newpost";
 import Browse from "./pages/Browse";
 import WorkFlow from "./pages/WorkFlow";
+import Itmes from "./pages/Itmes";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Nav />
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/browse/:id" element={<Itmes/>}/>
           <Route path="/browse" element={<Browse/>}/>
           <Route path="/workflow" element={<WorkFlow/>}/>
           <Route path="login" element={<Login/>} />
