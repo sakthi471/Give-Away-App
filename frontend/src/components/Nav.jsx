@@ -42,7 +42,7 @@ const Nav = () => {
        <Link to="/" >
        <div className="flex gap-3 items-center">
           <FaRecycle className="text-white text-xl" />
-          <p className="text-white">Give Away </p>
+          <p className="text-white">EcoSwap </p>
         </div></Link>
         <div onClick={()=> setNav(!nav)}>
           {nav ? (
