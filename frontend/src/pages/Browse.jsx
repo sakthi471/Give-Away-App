@@ -11,6 +11,7 @@ import realEs from "/items img/realEs.jpeg";
 import tablet from "/items img/tablet.jpg";
 
 const Browse = () => {
+  
   const BrowseItems = [
     {
       id: 1,
@@ -62,32 +63,32 @@ const Browse = () => {
 
   return (
     <div className="w-full  p-2 text-white flex flex-col gap-3">
-      <h2 className=" font-bold py-4 space-y-5 px-2">
+      <h2 className=" font-bold py-4 space-y-5 px-10">
         Free Stuff Near <span> Madurai,TN</span>
       </h2>
-      <div className="flex items-center justify-between px-2">
-        <div className=" relative ">
+      <div className="flex items-center justify-center px-10 ">
+        <div className=" relative  ">
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className=" rounded-sm px-3 py-1 w-[90%] text-black outline-blue-500 z-0"
+            className=" rounded-sm px-3 py-1 w-[300px] text-black outline-blue-500 z-0"
             type="text"
             placeholder="Search what you want"
           />
-          <AiOutlineSearch className=" text-gray-800 font-bold text-xl absolute top-2 right-9" />
+          <AiOutlineSearch className=" text-gray-800 font-bold text-xl absolute top-2 right-3" />
         </div>
-        <HiAdjustments className="text-3xl mr-4" />
+        {/* <HiAdjustments className="text-3xl mr-4" /> */}
       </div>
 
-      <div className="w-full p-1 flex flex-col items-center gap-12 py-8">
+      <div className="w-full b p-1 flex   flex-wrap justify-center  gap-14 py-8">
         { filter.length===0?(
           <div className=" border border-blue-300 py-2 px-4  rounded-md">
              <p>Search Results Not Found </p>
           </div>
         ):(filter.map(({ id, title, location, img, dis }) => {
           return (
-            <Link to={`${id}`} key={id} className="w-full flex justify-center">
-              <div className="w-[95%] bg-[#F6F1F1] rounded-md shadow-lg shadow-gray-400/50">
+            <Link to={`${id}`} key={id} className=" flex justify-center">
+              <div className="  w-[300px] bg-[#F6F1F1] rounded-md shadow-lg shadow-gray-400/50">
                 <img src={img} className="w-full h-[250px]" />
 
                 <div className="text-black border-l flex flex-col gap- p-2">

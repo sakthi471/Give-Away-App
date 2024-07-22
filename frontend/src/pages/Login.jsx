@@ -1,25 +1,61 @@
-import React from "react";
+import axios from 'axios';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
-const Login = () => {
+ const Login = () => {
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const { setIsAuthenticated } = useAuth();
+
+  const login = async () => {
+    try {
+      await axios.post(
+        'http://localhost:5000/login',
+        { username, password },
+        { withCredentials: true }
+      );
+      setIsAuthenticated(true);
+
+       navigate('/');
+
+    } catch (err) {
+      console.log(err);
+      setError('Invalid username or password');
+    }
+  };
+
   return (
-    <div className="w-full text-white flex flex-col items-center py-14">
-      <h2 className=" text-2xl font-semibold">Login</h2>
-      <form className="flex flex-col gap-8 items-center py-6 w-full px-3 ">
-        <div className="flex flex-col gap-1 w-full" >
-          <label htmlFor="email">Email</label>
-          <input  className=" outline-1 rounded-sm outline-none py-2 px-2 focus:outline-blue-600" type="text" placeholder="sakthi@gmail.com" />
-        </div>
-        <div className="flex flex-col gap-1 w-full">
-          
-          <label htmlFor="">Password</label>
-          <input className=" outline-1 rounded-sm outline-none py-2 px-2 focus:outline-blue-600" type="text" placeholder="Enter password" />
-        </div>
-           <button className='bg-gradient-to-r from-[#117EE2] to-[#4E54E5] px-12 py-1 
-              rounded-sm'>Sign In</button>
-      </form>
-      <p className=" text-sm">Don’t have an account? <span className=" font-bold px-2 underline">Sign up</span> </p>
+    <div className='flex justify-center '>
+    <div className=' flex flex-col w-[600px] gap-5 py-20'>
+      <h1 className=' text-center font-bold text-2xl'>Login</h1>
+      <input className=' py-2 px-4  rounded-md border-[1px] border-slate-400'
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input className=' py-2 px-4  rounded-md border-[1px] border-slate-400'
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      {error && <p className=' text-red-500 text-center'>{error}</p>}
+      <button className=' bg-blue-500 py-2 px-4 rounded-md text-white font-bold' onClick={login}>Login</button>
+      <Link to='/register'> <small className='text-white'>Don't have a account <span className=' underline text-blue-700 '>Register here</span>  </small></Link>
+
     </div>
-  );
-};
+    </div>
+  )
+}
+
+
+
 
 export default Login;

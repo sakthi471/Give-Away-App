@@ -13,6 +13,7 @@ import Itmes from "./pages/Itmes";
 
 function App() {
   return (
+    
     <div className="w-full bg-gradient-to-b from-[#020202] to-[#0A274D] min-h-screen">
       <Nav />
         <Routes>
@@ -20,9 +21,9 @@ function App() {
           <Route path="/browse/:id" element={<Itmes/>}/>
           <Route path="/browse" element={<Browse/>}/>
           <Route path="/workflow" element={<WorkFlow/>}/>
-          <Route path="login" element={<Login/>} />
-          <Route path="signup" element={<Signup/>} />
-          <Route path="newpost" element={<Newpost/>} />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/register" element={<Signup/>} />
+          <Route path="/newpost" element={<Newpost/>} />
           <Route path="*" />
         </Routes>   
     </div>
